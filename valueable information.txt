@@ -3,6 +3,7 @@ this is just to get rid of the excess comments in my code
 ctrl+f to find specific functionalities of certain functions
 use libresprite for spriting and such operations
 
+IMPORTANT: NEVER name file folder names the same as terraria classes like Item, GenPass, And Tile. This will cause conflicts in your code.
 
 
 

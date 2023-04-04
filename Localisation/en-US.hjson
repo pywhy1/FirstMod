@@ -1,0 +1,42 @@
+﻿Mods:{
+	FirstMod:{
+	
+		ItemName:{
+			SkulkBar:"Skulkite Bar"
+			SkulkOre:"Skulkite Ore"
+			SkulkRareBar:"Chavite Bar"
+			SkulkRareOre:"Chavite Ore"
+			SkulkAxe:"Skulkite Axe"
+			SkulkHammer:"Skulkite Hammer"
+			SkulkPickaxe:"Skulkite Pickaxe"
+			SkulkShortSword:"Skulkite Short Sword"
+			FirstSword:"LeafBlade"
+			GiantGrassBow:"Giant Grass Bow"
+			GrassBow:"Grass Bow"
+			FirstItem:"Generic Material"
+	
+		}
+
+		ItemTooltip:{
+			SkulkAxe:"Skulk-crafted Axe"
+			SkulkHammer:"Hammy"
+			SkulkPickaxe:"Picky"
+			SkulkShortSword:"A very short sword.\nWhy would you craft this"
+			FirstSword:"Very big and fast. Much OP."
+			FirstItem:"Used for Leaf-Based items."
+			GiantGrassBow:"Leaf + stick = Bow :D\nHuge, big and bulky"
+			GrassBow:"Leaf + stick = Bow :D\nNimble and fast."
+	
+		}
+
+		MapObject:{
+			SkulkOre:"Skulk"
+			SkulkRareOre:"Chavite"
+
+
+		}
+
+
+	}
+
+}
