@@ -42,9 +42,9 @@ namespace FirstMod.Common.Systems.GenPasses
                 int y = WorldGen.genRand.Next(0, Main.maxTilesY);
 
                 Tile tile = Framing.GetTileSafely(x, y);//get the tile at the current x and y position as we only want the ore the spawn in a specific location, do this by checking the TileType.
-                if(tile.TileType == TileID.SnowBlock || tile.TileType == TileID.IceBlock || tile.TileType == TileID.Slush)
+                if (tile.TileType == TileID.SnowBlock || tile.TileType == TileID.IceBlock || tile.TileType == TileID.Slush || tile.TileType == TileID.Mud)
                 {
-                    WorldGen.TileRunner(x, y, WorldGen.genRand.Next(2, 5), WorldGen.genRand.Next(1, 4), ModContent.TileType<SkulkRareOre>());
+                    WorldGen.TileRunner(x, y, WorldGen.genRand.Next(6, 10), WorldGen.genRand.Next(7, 10), ModContent.TileType<SkulkRareOre>());
                     numSpawned++; 
                 }
 
