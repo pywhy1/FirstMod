@@ -1,0 +1,3 @@
+displayName = First Mod
+author = Why
+version = 0.1

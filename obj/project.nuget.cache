@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/HuhRDXRbOwnEgg/b+8KSUT/nt72o7o1NiXgd0BvNvz5g7wPRkh4foqL9PFmto2lKt2iVqs3pisnkuR7n7TxcA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Apollos\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\FirstMod\\FirstMod.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Apollos\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

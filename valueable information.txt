@@ -1,0 +1,75 @@
+some stuff will go here later
+this is just to get rid of the excess comments in my code
+ctrl+f to find specific functionalities of certain functions
+use libresprite for spriting and such operations
+
+
+
+
+
+
+
+
+
+ItemID.Sets.SortingPriorityMaterials[Type] = 48; sorting priority determines where the item should be placed when you click the 'sort' button in the inventory
+
+Item.createTile = ModContent.TileType<Tiles.SkulkOre>(); createTile takes in the TileID that will be created. a modded tile can be acquired through ModContent. a namespace leading to the 
+class in the parameters can be added or just adding the namespace in works
+
+TileID.Sets.Ore[Type] = true; TileID.Sets contains groups of tiles that share some things in common, like the trait of being an ore. We will be adding our tile to the ore set.
+
+Main.tileSolid[Type] = true; Main.tileSolid will tell us if the tile has colision enabled or not. You would disable this for a furniture like the Clock.
+
+Main.tileMergeDirt[Type] = true; The ore texture has have frames that merge with dirt blocks, so this is set to true.
+
+Main.tileBlockLight[Type] = true; this blocks light from passing through the block
+
+Main.tileShine[Type] = 900; the frequency dust particles will emit from this block, the higher the value the less frequent
+
+Main.tileShine2[Type] = true; handles some of the drawing for the tile, research this for more clarity
+
+Main.tileSpelunker[Type] = true; shines from spelunker pot
+
+Main.tileOreFinderPriority[Type] = 350; basically sets the value for the metal detector and its variants, so that it may show up instead of lower level ores, for example gold instead of copper
+350 is right above platinum
+
+AddMapEntry(new Color(2, 66, 215), CreateMapEntryName()); 2 parameters are passed here: the color that will appear on your map and the "key" that is used to display the name of the tile. 
+                                                  The key parameter is optional.
+                                                CreateMapEntryName is the method that gets the "key" based on the mod name, class name, and object type. They key, in this case, will be:
+                                                Mod.FirstMod.MapObject.SkulkOre
+
+DustType = DustID.Tungsten; can be set to vanilla IDs for dust type, but I THINK it just sets the sparkle of the ore
+
+ItemDrop = ModContent.ItemType<Items.Placeables.YOUROREHERE> ItemDrop sets what item will drop after being destroyed. We set this value to the ItemID that we want to spawn. For more than one item,
+which is The default, refer to ()
+
+SoundType = SoundID.Tink; SoundType sets what sound will play when someone hits the tile with a pickaxe. (THIS IS NOT CORRECT, REMOVE THIS WHEN THIS HAS BEEN EDITED)
+
+MineResist = 1.5f; this sets how long it takes to break the tile
+
+MinPick = 60; this determines minimum pickaxe power needed to break the tile
+
+Item.createTile = ModContent.TileType<Tiles(or path to the file).FILE_WITH_YOUR_CUSTOM_BARS>(); this tile being created CAN be used by all custom bar classes. Any bar made later on will use this tile.
+
+Item.placeStyle = 0; placeStyle will determine the "frame" that is going to be placed. You can see a good example of this in the terraria vanilla textures files. This texture will contain
+            //multiple bars in a line, set next to each other, in a process called padding. https://github.com/tModLoader/tModLoader/wiki/Spriting#padding 
+            //0 is frame 1, 1 is frame 2, and so on.
+
+Main.tileSolidTop[Type] = true; this will make the top of the tile solid, and ONLY the top solid. Acting like a platform.
+
+Main.tileFrameImportant[Type] = true; this is required for tiles that will not use the conventional textures. Used for custom bars and furniture. By setting this to true we are saying
+that we will handle things differently than the game.
+
+TileObjectData.newTile.CopyFrom(TileObjectData.Style1x1); because it is a special tile, the TileObjectData has to be accessed, and a few settings must be set.
+we can copy an existing style, in this case, we will copy from the 1x1 style.
+
+AddMapEntry(new Color(200, 200, 200), Language.GetText("MapObject.MetalBar")); because this tile contains multiple tiles, a shared name must be given. The vanilla value for Bars will be retrieved here.
+This is also called a language key.
+
+TileObjectData.newTile.StyleHorizontal = true; this texture is a horizontal strip so TileObjectData must be set to recognise this. setting this to true does this.
+
+TileObjectData.newTile.LavaDeath = false; This prevents the tile from being destroyed on contact with lava.
+
+TileObjectData.addTile(Type); This applys the tile to the TileObjectData, and this is done by passing Type into addTile()
+
+
