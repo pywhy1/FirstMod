@@ -84,3 +84,20 @@ TileObjectData.newTile.LavaDeath = false; This prevents the tile from being dest
 TileObjectData.addTile(Type); This applys the tile to the TileObjectData, and this is done by passing Type into addTile()
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
