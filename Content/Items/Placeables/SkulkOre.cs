@@ -31,6 +31,9 @@ namespace FirstMod.Content.Items.Placeables
             Item.useTurn = true;
             Item.autoReuse = true;
 
+            
+
+
             Item.createTile = ModContent.TileType<Tiles.SkulkOre>();  
                
 

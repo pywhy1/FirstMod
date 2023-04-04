@@ -14,6 +14,7 @@
 			GiantGrassBow:"Giant Grass Bow"
 			GrassBow:"Grass Bow"
 			FirstItem:"Generic Material"
+			EssenseCaster:"Fire Caster"
 	
 		}
 
@@ -26,16 +27,21 @@
 			FirstItem:"Used for Leaf-Based items."
 			GiantGrassBow:"Leaf + stick = Bow :D\nHuge, big and bulky"
 			GrassBow:"Leaf + stick = Bow :D\nNimble and fast."
+			EssenseCaster:"Casts a small bolt of fire"
 	
 		}
 
 		MapObject:{
 			SkulkOre:"Skulk"
 			SkulkRareOre:"Chavite"
+			
 
 
 		}
-
+		ProjectileName:{
+		FireEssense:"Essense of fire"
+		
+		}
 
 	}
 
