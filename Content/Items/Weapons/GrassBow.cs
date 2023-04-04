@@ -23,12 +23,12 @@ namespace FirstMod.Content.Items.Weapons
 
             //use and animation style
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.useTime = 20;
-            Item.useAnimation = 20;
+            Item.useTime = 15;
+            Item.useAnimation = 15;
             Item.autoReuse = true;
             Item.shoot = 1;
             Item.useAmmo = AmmoID.Arrow;
-            Item.shootSpeed = 7f;
+            Item.shootSpeed = 9f;
 
             //damage
             Item.DamageType = DamageClass.Ranged;

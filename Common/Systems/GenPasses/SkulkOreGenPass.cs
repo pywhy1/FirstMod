@@ -28,7 +28,7 @@ namespace FirstMod.Common.Systems.GenPasses
                 int x = WorldGen.genRand.Next(100, Main.maxTilesX - 100); 
                 int y = WorldGen.genRand.Next((int)WorldGen.worldSurface, Main.maxTilesY - 300); 
 
-                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(3, 6), WorldGen.genRand.Next(2, 5), ModContent.TileType<SkulkOre>()); 
+                WorldGen.TileRunner(x, y, WorldGen.genRand.Next(6, 11), WorldGen.genRand.Next(6, 11), ModContent.TileType<SkulkOre>()); 
                                            
             }
 
