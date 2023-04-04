@@ -43,10 +43,7 @@ namespace FirstMod.Content.Tiles
                 //new ID.
                 //This will only drop 1 of the item. For multiple of the saMe item add a final parameter with the number you want to drop. The "Stack" parameter is defaulted to 1.
                 case 0: Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 16, 16, ModContent.ItemType<Items.Placeables.SkulkBar>()); break;
-
-                case 1:
-                    //ADD THE ITEM
-                    break;
+                case 1: Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 16, 16, ModContent.ItemType<Items.Placeables.SkulkRareBar>()); break;
                 case 2:
                     //ADD THE ITEM
                     break;
