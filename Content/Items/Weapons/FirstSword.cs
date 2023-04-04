@@ -21,15 +21,15 @@ namespace FirstMod.Content.Items.Weapons
             Item.height = 160;
             //use and animation style
             Item.useStyle = ItemUseStyleID.Swing;
-            Item.useTime = 40; //frames until completed swing
+            Item.useTime = 40; 
             Item.useAnimation = 10;
             Item.autoReuse = true;
 
             //damage
-            Item.DamageType = DamageClass.Melee; //this sets the damage type to melee
+            Item.DamageType = DamageClass.Melee; 
             Item.damage = 100;
-            Item.knockBack = 10f; //f is for float in C sharp
-            Item.crit = 10; //% chance for a crit
+            Item.knockBack = 10f; 
+            Item.crit = 10; 
 
             //misc
             Item.value = Item.buyPrice(gold: 20);

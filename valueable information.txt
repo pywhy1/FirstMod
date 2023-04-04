@@ -9,7 +9,12 @@ use libresprite for spriting and such operations
 
 
 
+Item.useTime = 40; frames until completed swing
 
+Item.DamageType = DamageClass.Melee; this sets the damage type to melee
+
+Item.knockBack = 10f; f is for float in C sharp, this sets the knockback on the item
+Item.crit = 10; % chance for a crit
 
 ItemID.Sets.SortingPriorityMaterials[Type] = 48; sorting priority determines where the item should be placed when you click the 'sort' button in the inventory
 
