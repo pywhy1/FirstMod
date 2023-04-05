@@ -3,6 +3,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework;
+using Terraria.DataStructures;
+using System;
 
 namespace FirstMod.Content.Items.Weapons
 {
@@ -65,5 +67,71 @@ namespace FirstMod.Content.Items.Weapons
 
             return offset;
         }
+
+
+        public override bool AltFunctionUse(Player player)
+        {
+            return true;
+        }
+
+
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            if (player.altFunctionUse == 2)
+            {
+                var rand = new Random();
+                int x = 0;
+                int j = 0;
+                int k = 0;
+                int c = 0;
+
+                
+
+
+
+
+                j = rand.Next(0, 255);
+                c = rand.Next(0, 255);
+                k = rand.Next(0, 255);
+                
+
+                Color Colors = new Color(j, c, k);
+
+                string[] stringArray = new string[] { "Nice shot!", "Fine Shooting!", "Good shot mate!", "Nice Shot!",
+                                                        "Good Shot!",
+                                                        "That was incredible!",
+                                                        "Woo! I love that shot!",
+                                                        "Ha ha! That was awesome!",
+                                                        "Whooo! You're the man!",
+                                                        "Nice job!",
+                                                        "Brilliant!",
+                                                        "Well done!",
+                                                        "Ha ha ha! Nice!",
+                                                        "That was amazing!",
+                                                        "Good work!",
+                                                        "Ha ha ha ha! You're good!",
+                                                        "Sweet shot!",
+                                                        "Ha ha ha ha! Nice shot!",
+                                                        "Whooo! You're incredible!",
+                                                        "Ha ha ha ha! Oh my God, wow!",
+                                                        "Unbelievable!" };
+
+                var rand1 = new Random();
+
+                int index = rand1.Next(0, stringArray.Length);
+
+
+                Rectangle playerRect = new Rectangle((int)player.position.X, (int)player.position.Y, player.width, player.height);
+                int text = CombatText.NewText(playerRect, Colors, "" + stringArray[index], true, true);
+                int timeLeft = Main.combatText[text].lifeTime;
+                
+                
+
+
+            }
+            return true;
+        }
+
     }
 }

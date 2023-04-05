@@ -65,5 +65,6 @@ namespace FirstMod.Content.Projectiles.Weapons
             }
 
         }
+
     }
 }
