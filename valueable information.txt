@@ -84,7 +84,21 @@ TileObjectData.newTile.LavaDeath = false; This prevents the tile from being dest
 TileObjectData.addTile(Type); This applys the tile to the TileObjectData, and this is done by passing Type into addTile()
 
 
+Here are some of the most commonly used fields and properties of the Projectile class in Terraria:
 
+    projectile.position: A Vector2 that represents the current position of the projectile in the game world.
+    projectile.velocity: A Vector2 that represents the current velocity of the projectile in the game world. You can modify this to control the projectile's movement.
+    projectile.ai: An array of floats that you can use to store custom data about the projectile. The ai array has a length of 3 by default, but you can increase this if you need more storage space.
+    projectile.damage: An integer that represents the amount of damage the projectile deals to enemies that it hits.
+    projectile.knockBack: A float that represents the amount of knockback that the projectile applies to enemies that it hits.
+    projectile.owner: An integer that represents the index of the player who "owns" the projectile. This is used to determine which player gets credit for killing enemies with the projectile, among other things.
+    projectile.timeLeft: An integer that represents the number of frames that the projectile has left to live. When this reaches 0, the projectile will be killed.
+    projectile.width and projectile.height: Integers that represent the width and height of the projectile's hitbox, in pixels.
+    projectile.alpha: An integer that represents the transparency of the projectile. Higher values make the projectile more transparent.
+    projectile.friendly and projectile.hostile: Boolean values that determine whether the projectile can damage friendly (i.e. player-controlled) entities and hostile (i.e. enemy) entities, respectively.
+    projectile.ignoreWater: A boolean value that determines whether the projectile can pass through water.
+    projectile.tileCollide: A boolean value that determines whether the projectile collides with tiles in the game world. If set to false, the projectile will pass through tiles.
+    projectile.netUpdate: A boolean value that determines whether the projectile should be synchronized over the network. If set to false, the projectile will only exist on the local client and will not be visible to other players in multiplayer games.
 
 
 
