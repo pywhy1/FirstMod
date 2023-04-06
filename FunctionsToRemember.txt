@@ -202,4 +202,9 @@ USED IN: PROJECTILES -----------------------------------------------------------
             DrawOffsetX = -((32 / 2) - halfProjWidth);
 
             DrawOriginOffsetY = -((32 / 2) - halfProjHeight);
-        }ssssssssssssssssss
+        }
+
+		bool Shockwaves = false;
+                Point explosionSize = new Point(80,80); //5 tiles in terraria is 80 pixels. So 5x5 area to cover with the explosion.
+                Point explosionCenter = new Point((int)Projectile.position.X, (int)Projectile.position.Y); //define where the explosion is created, in this case, is where our projectile is
+                Projectile.CreateImpactExplosion(3, Projectile.position, ref explosionSize, ref explosionCenter, 80, out Shockwaves);
