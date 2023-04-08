@@ -15,6 +15,7 @@
 			GrassBow:"Grass Bow"
 			FirstItem:"Generic Material"
 			EssenseCaster:"Fire Caster"
+			SoulOfLite:"Book of Lite"
 	
 		}
 
@@ -28,6 +29,7 @@
 			GiantGrassBow:"Leaf + stick = Bow :D\nHuge, big and bulky"
 			GrassBow:"Leaf + stick = Bow :D\nNimble and fast."
 			EssenseCaster:"Casts a small bolt of fire"
+			SoulOfLite:"Harness the army of the tyrant god, Tiny."
 	
 		}
 
