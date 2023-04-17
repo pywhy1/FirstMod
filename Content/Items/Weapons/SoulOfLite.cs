@@ -50,7 +50,7 @@ namespace FirstMod.Content.Items.Weapons
                 while (rapidFireTimer > 10)
                 {
                     Projectile.NewProjectile(Projectile.InheritSource(player), pos, velocity, ModContent.ProjectileType<LiteProjectile>(), damage, knockback, player.whoAmI);
-                    Thread.Sleep(500);
+                    
                     rapidFireTimer++;
                 }
             }

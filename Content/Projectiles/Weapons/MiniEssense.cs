@@ -7,21 +7,22 @@ using static Terraria.ModLoader.PlayerDrawLayer;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Security.Cryptography;
+using IL.Terraria.ID;
 
 namespace FirstMod.Content.Projectiles.Weapons
 {
-    internal class FireEssense : ModProjectile
+    internal class MiniEssense : ModProjectile
 
     {
         public override void SetDefaults()
         {
-            Projectile.width = 16; 
+            Projectile.width = 16;
             Projectile.height = 16;
 
             Projectile.friendly = true;
             Projectile.tileCollide = false;
             Projectile.ignoreWater = true;
-
+            
             Projectile.DamageType = DamageClass.Magic;
             Projectile.aiStyle = -1; //custom is -1
 
@@ -58,7 +59,7 @@ namespace FirstMod.Content.Projectiles.Weapons
             Projectile.ai[0]++;
 
 
-            
+
             //Projectile.ai is an array of floats that only contains 2 params.
             //Projectile.ai[0] is going to be used for the timer
             if (Projectile.ai[0] < 60f * 5f)
@@ -69,7 +70,6 @@ namespace FirstMod.Content.Projectiles.Weapons
                 //dont use large numbers when multiplying velocityz
                 //if you want, you can do it by a large number when the timer is on a specified value
                 float shootvelocity = 10f;
-
 
                 NPC closestnpc = NearestNPC(Projectile.position);
                 if (closestnpc == null) //if no npc present
@@ -89,52 +89,25 @@ namespace FirstMod.Content.Projectiles.Weapons
                 //Projectile.velocity *= 1.05f;
                 Projectile.alpha += 1;
                 //60 frames is 1 second.(assuming no extraUpdates are applied.) 
-                
+
                 Projectile.Kill();
                 //during the final frames you might want to increase alpha value so it looks like it fades.
-                
+
             }
             float rotateSpeed = 0.35f * (float)Projectile.direction; //rotates in the direction being faced. useful.
             Projectile.rotation += rotateSpeed;
             //take the rgb value you want and devide by 255. The params here take 0-1 values.
             Lighting.AddLight(Projectile.Center, 1, 0, 0); //makes a light area around the projectile. Not a glow mask.
+
             
-            if(Main.rand.NextBool(2)) 
-            {
-                int numToSpawn = 2;
-                for(int i = 0; i < numToSpawn; i++) 
-                {                                                                           //ItemID.dustType Im sure, or something of the like for vanilla dust.
-                    Dust.NewDust(Projectile.position, Projectile.height, Projectile.width, ModContent.DustType<WDust>(), Projectile.velocity.X * 0.1f, Projectile.velocity.Y * 0.1f,
-                        0, default (Color), 1f); //1f is normal size, 2f is double, 0.5f is half size. determines dust size.
-                }
-            }
 
         }
-        
+
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
+            target.AddBuff(31, 5 * 60); //buff id, time
+            target.StrikeNPC(20, knockback, Projectile.direction, crit);
             Projectile.Kill();
-            //50% chance to spawn poison-dealing orbs
-            int chancetospawn = Main.rand.Next(0, 1);
-            if (chancetospawn == 0) 
-            {
-                //spawn smaller projectiles that home in but do less damage
-                int randnum  = Main.rand.Next(-100, 100);
-                int aboveq = Main.rand.Next(0, 1);
-                int spacer = 64;
-                if (aboveq == 1) //if aboveq comes out to true, then we will place the projectile above the target.
-                {
-                    randnum *= -1;
-                    spacer *= -1; //ensures the projectile only spawns within a limit of a few tiles away 
-                }
-
-                int randx = Main.rand.Next(-100, 100); 
-                Vector2 spawnpos = new Vector2((Projectile.Center.X + randx), (Projectile.Center.Y + spacer) + randnum);
-                Projectile.NewProjectile(Projectile.InheritSource(Projectile), spawnpos, Projectile.velocity, ModContent.ProjectileType<MiniEssense>(), damage, knockback);
-            }
-
-            
-            
         }
 
     }

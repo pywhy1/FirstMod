@@ -28,7 +28,7 @@ namespace FirstMod.Content.Items.Weapons
             Item.useTime = 40;
             Item.useAnimation = 40;
             Item.autoReuse = true;
-            Item.shoot = 1;
+            Item.shoot = ProjectileID.WoodenArrowFriendly;
             Item.useAmmo = AmmoID.Arrow;
             Item.shootSpeed = 4f;
 
@@ -81,7 +81,7 @@ namespace FirstMod.Content.Items.Weapons
             if (player.altFunctionUse == 2)
             {
                 var rand = new Random();
-                int x = 0;
+                
                 int j = 0;
                 int k = 0;
                 int c = 0;

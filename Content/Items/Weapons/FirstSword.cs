@@ -2,6 +2,8 @@ using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Creative;
+using Microsoft.Xna.Framework;
+using FirstMod.Content.Projectiles.Weapons;
 
 namespace FirstMod.Content.Items.Weapons
 {
@@ -46,6 +48,7 @@ namespace FirstMod.Content.Items.Weapons
                 .AddTile(TileID.WorkBenches) //addtile takes tile id for crafting (like if it takes a anvil or a work bench)
                 .Register(); //register registers the item.
 
-        }   
+        }
+        
     }
 }
